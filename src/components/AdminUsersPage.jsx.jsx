@@ -4,7 +4,7 @@ import {
   deleteUser,
   toggleLockUser,
 } from "../services/adminService";
-import "../css/adminUsersPage.css";
+import "../css/AdminUsersPage.css";
 
 import { useUser } from "../hooks/UserContext";
 import { toast } from "react-toastify";
