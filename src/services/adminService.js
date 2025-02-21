@@ -10,7 +10,7 @@ export async function getAllUsers() {
       throw new Error("Unauthorized: No token");
     }
 
-    const response = await axios.get("http://localhost:5000/api/admin/users", {
+    const response = await axios.get(`${API_URL}/admin/users`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

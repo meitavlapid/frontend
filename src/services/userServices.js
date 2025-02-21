@@ -18,10 +18,7 @@ export async function loginUser(credentials) {
 
 export async function registerUser(userData) {
   try {
-    const response = await axios.post(
-      "http://localhost:5000/api/users/register",
-      userData
-    );
+    const response = await axios.post("${API_URL}/users/register", userData);
 
     console.log("🚀 Server Response:", response); // ✅ הדפסת התגובה
 
@@ -88,7 +85,7 @@ export async function updateUser(userId, updatedData) {
     }
 
     const response = await axios.put(
-      `http://localhost:5000/api/users/${userId}`, // ✅ הוספת `/users`
+      `${API_URL}/users/${userId}`, // ✅ הוספת `/users`
       updatedData,
       {
         headers: {

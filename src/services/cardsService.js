@@ -36,14 +36,11 @@ export async function getAllMyCards() {
 
     console.log(`📢 Fetching my cards with token: ${token}`);
 
-    const response = await axios.get(
-      "http://localhost:5000/api/cards/my-cards",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await axios.get(`${API_URL}/cards/my-cards`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     console.log("📥 Response from server:", response.data);
     return response.data;
@@ -63,16 +60,12 @@ export async function addCard(cardData) {
       throw new Error("No authentication token found");
     }
 
-    const response = await axios.post(
-      "http://localhost:5000/api/cards",
-      cardData,
-      {
-        headers: {
-          "x-auth-token": token,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.post(`${API_URL}/cards`, cardData, {
+      headers: {
+        "x-auth-token": token,
+        "Content-Type": "application/json",
+      },
+    });
 
     console.log("✅ Card added successfully:", response.data);
     return response.data;
@@ -131,7 +124,7 @@ export async function likeCard(cardId) {
 
   try {
     const response = await axios.patch(
-      `http://localhost:5000/api/cards/${cardId}/like`, // 🛠️ תיקון הנתיב
+      `${API_URL}/cards/${cardId}/like`, // 🛠️ תיקון הנתיב
       {},
       {
         headers: {
@@ -145,33 +138,3 @@ export async function likeCard(cardId) {
     throw error;
   }
 }
-
-//patch biz card number
-export async function bizCard(id, cardData) {
-  const token = localStorage.getItem("token");
-
-  let config = {
-    method: "patch",
-    maxBodyLength: Infinity,
-    url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${id}`,
-    headers: {
-      "x-auth-token": token,
-      "Content-Type": "application/json",
-    },
-    data: cardData,
-  };
-
-  const response = await axios
-    .request(config)
-
-    .then((response) => {
-      console.log(JSON.stringify(response.data));
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-  return response;
-}
-
-
