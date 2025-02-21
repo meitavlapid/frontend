@@ -1,0 +1,168 @@
+* {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.favhome-container {
+  padding: 0px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.favcards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.favcard {
+  width: 300px;
+  height: 400px;
+  border: 1px solid var(--card-background);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-background);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.favcard:hover {
+  transform: translateY(-10px);
+  background-color: var(--card-hover-background);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+.favcard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favcard h3 {
+  font-size: 20px;
+  color: #3796fc;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  background-color: var(--card-background);
+}
+
+.favcard h4 {
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: 400;
+  background-color: var(--card-background);
+}
+
+.favcard p {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: var(--card-background);
+  padding: 10px;
+}
+
+.favdetails {
+  font-size: 12px;
+  color: var(--text-color);
+  line-height: 1.5;
+  padding: 10px;
+  background-color: var(--card-background);
+}
+
+.favcard-actions {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--card-background);
+}
+
+.favcard-actions button {
+  width: 30%;
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: var(--button-background);
+  border: none;
+}
+
+.favcard-actions button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #72bcee;
+  color: #3498db;
+}
+
+.favcard-actions button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .favcards-section {
+    grid-template-columns: repeat(auto-fit, (300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .favhome-container {
+    width: 95%;
+  }
+
+  .favcards-section {
+    grid-template-columns: repeat(auto-fit, (250px, 1fr));
+    width: 100%;
+    margin: 20px;
+  }
+
+  .favcard-actions {
+    flex-direction: row;
+  }
+
+  .favcard-actions button {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .favcard h3 {
+    font-size: 18px;
+  }
+
+  .favcard h4 {
+    font-size: 14px;
+  }
+
+  .favcard p {
+    font-size: 12px;
+  }
+}

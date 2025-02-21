@@ -1,0 +1,204 @@
+* {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.mycontainer {
+  padding: 0px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.mycardspage {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 25px;
+
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.mycard {
+  width: 300px;
+  height: 800px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 16px -7px var(--text-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.mycard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+.mycard img {
+  width: 80%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mycard h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #3498db;
+  margin-bottom: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.mycard h3 {
+  font-size: 20px;
+  color: #3796fc;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.mycard h4 {
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: 400;
+}
+
+.mycard p {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.mycardbuttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+.mycardbuttoncreate {
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+.mycardbuttondhart,
+.mycardbuttonedit,
+.mycardbuttondelete {
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.mycardbutton button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #72bcee;
+  color: #3498db;
+}
+
+.mycardbutton button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .mycardspage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mycard {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mycontainer {
+    width: 95%;
+  }
+
+  .mycardspage {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mycard {
+    width: 300px;
+    height: 100%;
+
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .mycardbuttons {
+    flex-direction: column;
+  }
+
+  .mycardbuttoncreate,
+  .mycardbuttondhart,
+  .mycardbuttonedit,
+  .mycardbuttondelete {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mycard h1 {
+    font-size: 20px;
+  }
+
+  .mycard h3 {
+    font-size: 18px;
+  }
+
+  .mycard h4 {
+    font-size: 14px;
+  }
+
+  .mycard p {
+    font-size: 12px;
+  }
+}

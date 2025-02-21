@@ -1,0 +1,162 @@
+* {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  justify-content: center;
+  background-color: var(--background-color);
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: bold;
+  background-color: transparent;
+  background-color: var(--background-color);
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ffffff;
+}
+
+.table tbody th,
+.table tbody td {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ffffff;
+}
+
+.btn {
+  width: 80px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+.form-control {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+  border: none;
+}
+
+/* 🖥️ התאמות למסכים בינוניים (טאבלטים) */
+@media screen and (max-width: 992px) {
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 14px;
+    background-color: var(--background-color);
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+/* 📱 התאמות למסכים קטנים (מובייל) */
+@media screen and (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 5px;
+    font-size: 3em;
+    background-color: var(--background-color);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .table td {
+    width: 90%;
+    display: flex;
+    border: none;
+    font-size: 0.4em;
+    color: var(--text-color);
+    line-height: 1.5;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+  }
+
+  .table td::before {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    width: 50%;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
