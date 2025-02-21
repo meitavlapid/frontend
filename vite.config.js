@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   preview: {
-    port: process.env.PORT || 10000, // שימוש בפורט ש-Render מקצה
-    host: "0.0.0.0", // מאזין לכל החיבורים
+    port: process.env.PORT || 10000, // שימוש בפורט המתאים ל-Render
+    host: "0.0.0.0", // מאפשר חיבור חיצוני
+    allowedHosts: ["prj-node.onrender.com"], // מאפשר ל-Render לגשת לאפליקציה
   },
   server: {
     port: process.env.PORT || 3000, // גם בסביבת פיתוח
